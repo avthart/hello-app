@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	version          = "v1.0.0"
+	version          = "v2.0.0"
 	bgColor          = "white"
 	healthyStatus    = true
 	mutexHealthState = &sync.RWMutex{}
