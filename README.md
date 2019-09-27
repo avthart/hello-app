@@ -1,6 +1,6 @@
 # hello-app
 
-Tiny Go webserver that prints hostname and version as HTML or JSON with health and prometheus endpoints.
+Tiny Go webserver that prints hostname and version as HTML or JSON. The app includes `/health` and `/metrics` prometheus endpoints.
 
 There are four versions available which is handy for testing different scenario's:
 
@@ -17,7 +17,8 @@ There are four versions available which is handy for testing different scenario'
 - `/`: prints hostname and version as HTML.
 - `/api`: prints hostname and version as JSON.
 - `/health`: health check which will return `HTTP 200 Healthy`.
-- `/down`: mark the server as down, this will result in a HTTP 503 Unhealthy response for `/health`.
+- `/down`: mark the server as down, this will result in a `HTTP 503 Unhealthy` when checking `/health`.
+- `/metrics`: prometheus endpoint for scraping metrics.
 
 ### Flags
 
