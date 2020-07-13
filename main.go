@@ -97,6 +97,10 @@ func errorHandler() http.HandlerFunc {
 
 func helloHandler() http.HandlerFunc {
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/" {
+      			http.NotFound(w, r)
+			return
+   		} 
 		if r.Method == http.MethodGet {
 			w.WriteHeader(http.StatusOK)
 			hostname, _ := os.Hostname()
